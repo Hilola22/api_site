@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
   return (
-    <footer className='h-30 bg-slate-900'>Footer</footer>
-  )
-}
+    <footer className="h-[50px] bg-gradient-to-r from-blue-500 to-purple-500 text-white flex items-center justify-center text-center">
+      MyWebsite. With FakeApi Informations!
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
