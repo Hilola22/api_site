@@ -10,7 +10,9 @@ const UsersHero = () => {
 
   return (
     <div className="mt-30 container mx-auto">
-      <h2 className="text-2xl font-bold mb-6">Users</h2>
+      <h2 className="text-center text-2xl font-bold mb-6 text-blue-500">
+        Users
+      </h2>
       <UsersView data={data} />
     </div>
   );

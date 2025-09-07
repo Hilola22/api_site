@@ -1,57 +1,47 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-// import logo from "../../assets/logo.png";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const links = [
     { name: "Home", path: "/" },
     { name: "Users", path: "/users" },
     { name: "Posts", path: "/posts" },
-    { name: "About", path: "/about" },
     { name: "Login", path: "/login" },
     { name: "Sign up", path: "/signup" },
   ];
 
   return (
-    <header
-      className={`w-full bg-white shadow-md fixed top-0 left-0 z-50 select-none`}
-    >
+    <header className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md fixed top-0 left-0 z-50 select-none">
       <div className="container mx-auto px-4 flex justify-between items-center h-20">
         <div className="flex items-center gap-4">
-          {/* <img
-            onClick={() => navigate("/")}
-            src=""
-            alt="Logo"
-            className="h-10 w-auto"
-          /> */}
-          <h2 className="font-bold">LOGO</h2>
+          <h2 className="font-bold text-xl md:text-2xl">LOGO</h2>
         </div>
-
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="focus:outline-none"
           >
-            <span className="block w-6 h-0.5 bg-black mb-1"></span>
-            <span className="block w-6 h-0.5 bg-black mb-1"></span>
-            <span className="block w-6 h-0.5 bg-black"></span>
+            <span className="block w-6 h-0.5 bg-white mb-1 rounded"></span>
+            <span className="block w-6 h-0.5 bg-white mb-1 rounded"></span>
+            <span className="block w-6 h-0.5 bg-white rounded"></span>
           </button>
         </div>
-
         <nav
-          className={`flex-col md:flex-row md:flex gap-6 absolute md:static top-20 left-0 w-full md:w-auto bg-white md:bg-transparent p-6 md:p-0 ${
-            isOpen ? "flex" : "hidden"
-          }`}
+          className={`flex-col md:flex-row md:flex gap-6 absolute md:static top-20 left-0 w-full md:w-auto p-6 md:p-0 
+            ${
+              isOpen
+                ? "flex bg-gradient-to-r from-blue-500 to-purple-500 md:bg-transparent"
+                : "hidden"
+            }`}
         >
           {links.map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `uppercase font-medium ${
-                  isActive ? "text-[#3f3fd6] underline" : "text-black"
+                `uppercase font-medium text-white hover:text-yellow-300 transition ${
+                  isActive ? "underline text-yellow-300" : ""
                 }`
               }
               onClick={() => setIsOpen(false)}

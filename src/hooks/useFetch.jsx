@@ -13,7 +13,7 @@ export const useFetch = (endpoint) => {
       .then((res) => setData(res.data))
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [endpoint]);
 
   return {data, loading, error}
 };
