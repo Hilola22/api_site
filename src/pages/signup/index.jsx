@@ -56,7 +56,7 @@ const Signup = () => {
         >
           <CornerUpLeft size={28} />
         </button>
-      </div>d
+      </div>
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-xl shadow-md w-full max-w-md"
